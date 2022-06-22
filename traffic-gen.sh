@@ -4,6 +4,6 @@ do
 	do
 		IFS='.' read -a payload <<< "$src"
 		sleep $(shuf -i 0-15 -n 1)
-		nping -S $src --data-length ${payload[0]} $dst
+		nping -S $src --data-length ${payload[0]} --tcp $dst
 	done
 done
