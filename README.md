@@ -1,2 +1,2 @@
-# Simple-Traffic-Generator
-Simple bash script to generate traffic using nping
+# CTF-Creators-Tools
+Tools for CTF Creators to help them create realistic challenges
