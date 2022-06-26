@@ -1,6 +1,5 @@
 from scapy.all import rdpcap,wrpcap
 import random
-import sys
 
 def mac_changer_ipv4(packets, pktnumbr):
     if packets[pktnumbr]["IP"].dst in macip_list:
